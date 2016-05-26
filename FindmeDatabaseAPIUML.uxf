@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>390</x>
+      <y>600</y>
+      <w>430</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>DatabaseService
+--
++ dbConfig:DBConfig
++ confPath:String
+--
++ setConfigPath(path:String):Boolean
++ configureDBAcces(conf:Object):Boolean
++ readConfig():Boolean
++ saveConfig();
++ connect():Boolean
++ close()
+
++ getTabel(tabelName:String):TabelDAO
++ updateTabel(tabelName, Object):Boolean
++ createTabe(tabelName:String):Boolean
++ removeTabe(tabelName:String):Boolean
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>110</x>
+      <y>690</y>
+      <w>200</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>DBConfig
+--
++ dbUrl:String
++ dbLoginname:String
++ dbPassword:String
++ dbName:String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>300</x>
+      <y>750</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;20.0;90.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>380</x>
+      <y>880</y>
+      <w>430</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>TabelDAO
+--
++ tabel:String
+--
+
++ getById(id):Object
++ getAll():Object[]
++ getByKeyValue(key, value):Object[]
++ insert(Object):Object
++ insertObjects(Object[]):Boolean
++ updateById(id, Object):Object
++ updateKeyById(id, key, value):Object
++ removeById(id):Object
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>550</x>
+      <y>850</y>
+      <w>30</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>100</x>
+      <y>350</y>
+      <w>190</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Client Findme App
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>0</y>
+      <w>410</w>
+      <h>550</h>
+    </coordinates>
+    <panel_attributes>FindmeDBAPI
+--
++ db:DatabaseService
+--
+//General functions:
++ open():Boolean
++ close():Boolean
++ configure(path:String):Boolean
+
+//User:
++ getUsers():User[]
++ getUsersWithRights(rights:String):User[]
++ getUserById(id):User
++ getUserIdByLoginname(loginname):int
++ getUserByLoginname(loginname):User
++ checkLogin(loginname, password):Boolean
++ createUser(Object):User
++ removeUserById():Boolean
++ updateUser(Object):User
++ changePassword(pw:String):Boolean
++ changeRights(rights:String):Boolean
++ insertUsers(Object[]):Booean
+
+//Profile:
++ getProfile(id):Profile
++ getProfileIdByUserId(userid):int
++ getProfileByEmail(email):Profile
++ getProfiles():Profile[]
++ createProfile(Profile):Boolean
++ updateProfile(Profile):Boolean
++ updateProfileEntry(entry, value):Boolean
++ findProfilesByEntry(entry, value):Profile[]
++ findProfilesByKey(key):Profile[]
+
+...</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>580</x>
+      <y>540</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>360</y>
+      <w>160</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>140.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
