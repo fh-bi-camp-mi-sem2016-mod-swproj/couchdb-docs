@@ -1,0 +1,547 @@
+% This file was converted to LaTeX by Writer2LaTeX ver. 1.4
+% see http://writer2latex.sourceforge.net for more info
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+ \usepackage{listings}
+\usepackage{amssymb,amsfonts,textcomp}
+\usepackage{array}
+\usepackage{color}
+\usepackage{supertabular}
+\usepackage{hhline}
+\makeatletter
+\newcommand\arraybslash{\let\\\@arraycr}
+\makeatother
+\setlength\tabcolsep{1mm}
+\renewcommand\arraystretch{1.3}
+\definecolor{zubesprechen}{RGB}{128, 0, 0}
+\title{}
+\begin{document}
+\section{SW-Project Find-Me Platform}
+Daten für datenbank:
+
+
+\subsection[Users:]{Users:}
+Modell:
+
+
+\tablefirsthead{}
+\tablehead{}
+\tabletail{}
+\tablelasttail{}
+\begin{supertabular}{|m{5.466cm}|m{5.467cm}|m{5.467cm}|}
+\hline
+Feldname &
+Type &
+Kardinalität\\\hline
+\_id &
+int &
+1\\\hline
+login &
+String &
+1\\\hline
+password &
+String &
+1\\\hline
+rechte &
+String(admin, normalUser, fakeUser) &
+1\\\hline
+\end{supertabular}
+
+
+\bigskip
+
+JSON :
+
+\begin{flushleft}
+\tablefirsthead{}
+\tablehead{}
+\tabletail{}
+\tablelasttail{}
+\begin{supertabular}{|m{3.61cm}|m{2.684cm}|}
+\hline
+User: &
+\begin{center}
+\begin{tabular}{|m{2.49cm}|}
+
+\hline
+\_id\\\hline
+login\\\hline
+password\\\hline
+rechte\\\hline
+\end{tabular}
+\end{center}
+\\\hline
+\end{supertabular}
+\end{flushleft}
+
+So wirsd dann in JSON assehen (die eingebetteten Tabellen sind Objekte):
+\begin{lstlisting}
+{users: [
+  {"_id":"444","login":"admin", "password": "r567t"," rechte": "admin"},
+  {"_id":"555","login":"anna", "password": "56zu7", "rechte": "normalUser"},
+] }
+\end{lstlisting}
+
+\newpage
+\subsection[Profile:]{Profile:}
+Modell:
+
+\begin{flushleft}
+\tablefirsthead{}
+\tablehead{}
+\tabletail{}
+\tablelasttail{}
+\begin{supertabular}{|m{5.466cm}|m{5.467cm}|m{3.76cm}|}
+\hline
+Feldname &
+Type &
+Kardinalität\\\hline
+\_id &
+int &
+1\\\hline
+user\_id &
+int &
+n (bei fake user n:1)\\\hline
+Name  &
+String &
+1\\\hline
+Vorname &
+String &
+1\\\hline
+Geburtsdatum &
+Date (Format? YYYY oder TT.MM.YYYY (8.1 Ansicht: Registrieren \ wird nur Geburtsjahr verlangt) &
+1\\\hline
+Geschlecht  &
+String (mänlich/weiblich/sonstiges) &
+1\\\hline
+Registrierungsdatum &
+Date &
+1\\\hline
+E-Mail adresse &
+String &
+1\\\hline
+Über mich &
+String &
+1\\\hline
+Familienstand  &
+String &
+1\\\hline
+praeferenzen\_id &
+int &
+1\\\hline
+freundeliste\_id &
+int &
+1\\\hline
+freunde\_anfragen\_id &
+int &
+1\\\hline
+\color{zubesprechen}
+Kinder anzahl &
+int &
+1\\\hline
+Haustiere &
+String &
+n\\\hline
+Job &
+String &
+n\\\hline
+Interessen  &
+Interessen  &
+1\\\hline
+Aussehen &
+Aussehen &
+1 \color{black}\\\hline
+\end{supertabular}
+\end{flushleft}
+
+\newpage
+JSON:
+
+\begin{flushleft}
+\tablefirsthead{}
+\tablehead{}
+\tabletail{}
+\tablelasttail{}
+\begin{supertabular}{|m{1.2019999cm}|m{6.494cm}|}
+\hline
+Profil &
+\begin{flushleft}
+\begin{tabular}{|m{3.001cm}m{3.001cm}|}
+
+\hline
+\multicolumn{2}{|m{6.202cm}|}{\_id}\\\hline
+\multicolumn{2}{|m{6.202cm}|}{user\_id}\\\hline
+\multicolumn{2}{|m{6.202cm}|}{Name }\\\hline
+\multicolumn{2}{|m{6.202cm}|}{Vorname}\\\hline
+\multicolumn{2}{|m{6.202cm}|}{Geburtsdatum}\\\hline
+\multicolumn{2}{|m{6.202cm}|}{Geschlecht }\\\hline
+\multicolumn{2}{|m{6.202cm}|}{Registrierungsdatum}\\\hline
+\multicolumn{2}{|m{6.202cm}|}{E-Mail adresse}\\\hline
+\multicolumn{2}{|m{6.202cm}|}{Über mich}\\\hline
+\multicolumn{2}{|m{6.202cm}|}{Familienstand }\\\hline
+\multicolumn{2}{|m{6.202cm}|}{praeferenzen\_id}\\\hline
+\multicolumn{2}{|m{6.202cm}|}{freundeliste\_id}\\\hline
+\multicolumn{2}{|m{6.202cm}|}{freunde\_anfragen\_id}\\\hline
+\multicolumn{2}{|m{6.202cm}|}{Kinder anzahl}\\\hline
+\multicolumn{1}{|m{3.001cm}|}{Haustier} &
+\begin{center}
+\begin{tabular}{|m{2.807cm}|}
+
+\hline
+Tierart\\\hline
+\end{tabular}
+\end{center}
+\\\hline
+\multicolumn{2}{|m{6.202cm}|}{Job}
+\\\hline
+\end{tabular}
+\end{flushleft}
+~
+\\\hline
+\end{supertabular}
+\end{flushleft}
+
+Alternativ:
+
+\begin{flushleft}
+\tablefirsthead{}
+\tablehead{}
+\tabletail{}
+\tablelasttail{}
+\begin{supertabular}{|m{1.2019999cm}|m{6.494cm}|}
+\hline
+Profil &
+\begin{flushleft}
+\begin{tabular}{|m{3.001cm}m{3.001cm}|}
+
+\hline
+\multicolumn{2}{|m{6.202cm}|}{\_id}\\\hline
+\multicolumn{1}{|m{3.001cm}|}{User } &
+\begin{center}
+\begin{tabular}{|m{2.807cm}|}
+
+\hline
+login\\\hline
+password\\\hline
+rechte\\\hline
+\end{tabular}
+\end{center}
+~
+\\\hline
+\multicolumn{2}{|m{6.202cm}|}{Name }\\\hline
+\multicolumn{2}{|m{6.202cm}|}{Vorname}\\\hline
+\multicolumn{2}{|m{6.202cm}|}{Geburtsdatum}\\\hline
+\multicolumn{2}{|m{6.202cm}|}{Geschlecht }\\\hline
+\multicolumn{2}{|m{6.202cm}|}{Registrierungsdatum}\\\hline
+\multicolumn{2}{|m{6.202cm}|}{E-Mail adresse}\\\hline
+\multicolumn{2}{|m{6.202cm}|}{Über mich}\\\hline
+\multicolumn{2}{|m{6.202cm}|}{Familienstand }\\\hline
+\multicolumn{1}{|m{3.001cm}|}{praeferenzen} &
+\begin{center}
+\begin{tabular}{|m{2.807cm}|}
+
+\hline
+interessen\_id\\\hline
+auserligkeiten\_id\\\hline
+\end{tabular}
+\end{center}
+~
+\\\hline
+\multicolumn{1}{|m{3.001cm}|}{freund} &
+\begin{center}
+\begin{tabular}{|m{2.807cm}|}
+
+\hline
+profil\_id\\\hline
+\end{tabular}
+\end{center}
+~
+\\\hline
+\multicolumn{1}{|m{3.001cm}|}{freunde\_anfrage} &
+\begin{center}
+\begin{tabular}{|m{2.807cm}|}
+
+\hline
+profil\_id\\\hline
+\end{tabular}
+\end{center}
+~
+\\\hline
+\multicolumn{2}{|m{6.202cm}|}{Miderjärige Kinder anzahl}\\\hline
+\multicolumn{1}{|m{3.001cm}|}{Haustier} &
+\begin{center}
+\begin{tabular}{|m{2.807cm}|}
+
+\hline
+Tierart\\\hline
+\end{tabular}
+\end{center}
+~
+\\\hline
+\multicolumn{2}{|m{6.202cm}|}{Job}\\\hline
+\end{tabular}
+\end{flushleft}
+~
+\\\hline
+\end{supertabular}
+\end{flushleft}
+\newpage
+\subsection[Praeferenzen]{Praeferenzen}
+
+\begin{center}
+\tablefirsthead{}
+\tablehead{}
+\tabletail{}
+\tablelasttail{}
+\begin{supertabular}{|m{5.467cm}|m{5.467cm}|m{5.467cm}|}
+\hline
+Feldname &
+Type &
+Kardinalität\\\hline
+\_id &
+int &
+1\\\hline
+interessen\_id &
+int &
+1\\\hline
+auserligkeiten\_id &
+Int  &
+1\\\hline
+\end{supertabular}
+\end{center}
+
+
+\subsection[Interessen:]{Interessen:}
+Interessen: (gleiche Daten müssen auch im Profil angegeben werden , sonst kann man nicht suchen)
+
+\textcolor{zubesprechen}{(gehören Interessen jetzt zum Profil des Benutzers selbst, oder müssen noch extra
+beforzugte Interessen für gesuchte Profile angegeben werden?)}
+
+\begin{center}
+\tablefirsthead{}
+\tablehead{}
+\tabletail{}
+\tablelasttail{}
+\begin{supertabular}{|m{5.467cm}|m{5.467cm}|m{5.467cm}|}
+\hline
+Feldname &
+Type &
+Kardinalität\\\hline
+\_id &
+int &
+1\\\hline
+Hobbys &
+String &
+n\\\hline
+Bücher &
+String &
+n\\\hline
+Filme &
+String &
+n\\\hline
+Spiele &
+String &
+n\\\hline
+Sport &
+String &
+n\\\hline
+Essen &
+String &
+n\\\hline
+Alkohol &
+boolean &
+1\\\hline
+Rauchen &
+boolean &
+1\\\hline
+Religiose/Philosophische Ansichten  &
+String &
+n\\\hline
+sonstiges &
+String &
+n\\\hline
+\end{supertabular}
+\end{center}
+
+\newpage
+\subsection[Bevorzugte Äußerligkeit]{Bevorzugte Äußerligkeit}
+\textcolor{zubesprechen}{(gleiche Daten(also Aussehen) müssen auch im Profilen
+angegeben werden , sonst kann man nicht nach diesen Kriterien suchen)}
+
+\begin{center}
+\tablefirsthead{}
+\tablehead{}
+\tabletail{}
+\tablelasttail{}
+\begin{supertabular}{|m{5.467cm}|m{5.467cm}|m{5.467cm}|}
+\hline
+Feldname &
+Type &
+Kardinalität\\\hline
+\_id &
+int &
+1\\\hline
+Haarfarbe &
+String &
+1\\\hline
+Haarstyle &
+String (welig, glatt, ...) &
+1\\\hline
+Augenfarbe &
+String &
+1\\\hline
+Hautfarbe &
+String &
+1\\\hline
+Körpergrö{\ss}e &
+int &
+1\\\hline
+Körperstatur &
+String &
+1\\\hline
+Tatoos &
+boolean &
+1\\\hline
+\end{supertabular}
+\end{center}
+
+\subsection[Freudenliste:]{Freudenliste:}
+\textcolor{zubesprechen}{(evtl. direkt ins Profil \ ein Array mit ids von befreundeten Profilen einfügen)}
+
+\begin{center}
+\tablefirsthead{}
+\tablehead{}
+\tabletail{}
+\tablelasttail{}
+\begin{supertabular}{|m{5.467cm}|m{5.467cm}|m{5.467cm}|}
+\hline
+Feldname &
+Type &
+Kardinalität\\\hline
+\_id &
+int &
+1\\\hline
+profil\_id\_1 &
+int &
+1\\\hline
+profil\_id\_2 &
+int &
+n\\\hline
+\end{supertabular}
+\end{center}
+
+\subsection[Freundschaftsanfragen:]{Freundschaftsanfragen:}
+\begin{center}
+\tablefirsthead{}
+\tablehead{}
+\tabletail{}
+\tablelasttail{}
+\begin{supertabular}{|m{5.467cm}|m{5.467cm}|m{5.467cm}|}
+\hline
+Feldname &
+Type &
+Kardinalität\\\hline
+\_id &
+int &
+1\\\hline
+user\_profil\_id &
+int &
+1\\\hline
+gefragte\_profil\_id &
+int &
+1\\\hline
+status &
+String (bestätigt, abgelehnt, unbekannt) &
+1\\\hline
+\end{supertabular}
+\end{center}
+\newpage
+\subsection[Liste gemeldeter Profile]{Liste gemeldeter Profile:}
+\begin{center}
+\tablefirsthead{}
+\tablehead{}
+\tabletail{}
+\tablelasttail{}
+\begin{supertabular}{|m{5.467cm}|m{5.467cm}|m{5.467cm}|}
+\hline
+Feldname &
+Type &
+Kardinalität\\\hline
+\_id &
+int &
+1\\\hline
+gemeldete\_profil\_id &
+int &
+1\\\hline
+Grund  &
+String &
+1\\\hline
+\end{supertabular}
+\end{center}
+
+
+\textcolor{zubesprechen}{(Vorlieben?, Vorstellungen? 8.2 Ansicht: Anmeldung \ )}
+
+
+\subsection[E-Mail-Box:]{E-Mail-Box:}
+\begin{center}
+\tablefirsthead{}
+\tablehead{}
+\tabletail{}
+\tablelasttail{}
+\begin{supertabular}{|m{5.467cm}|m{5.467cm}|m{5.467cm}|}
+\hline
+Feldname &
+Type &
+Kardinalität\\\hline
+\_id &
+int &
+1\\\hline
+sender\_id &
+int &
+1\\\hline
+empfänger\_id &
+int &
+1 (n?)\\\hline
+Subject &
+String &
+1\\\hline
+inhat &
+String &
+1\\\hline
+\end{supertabular}
+\end{center}
+
+\bigskip
+\color{zubesprechen}
+Datenschutzeinstellungen
+
+\begin{itemize}
+\item Geburtsdatum ansehen (alle/nur freunde/ nur ich)
+\item Berechtigung Bilder ansehen (alle/nur freunde/ nur ich)
+\item Berechtigung Nachrichten schreiben(alle/nur freunde/ nur admin)
+\end{itemize}
+
+{sanktionen (Welche Sanktionen werden Angewendet?, evtl. werden auch im Profil
+vermerkt (z.B 3 Tage Nachrichten-Sperre) oder Anzahl \ der Verwarnungen)
+
+? Performanze frage:
+
+Documente so aufteilen wie in rationaen DB:
+
++ kleinere documente kriegen und parsen
+
+- mehrere Get befehe an db wenn man Fremdschlüsseln hat
+
+mögigst wenig Documente haben (d.h da wo jetzt Id stehen, weren tatsächichen daten stehen z.b in arrays)
+
++ weniger anfragen an db
+
+- ein Riesendocument aufeinmal kriegen, den man dann parsen muss
+
+
+\bigskip
+\end{document}
