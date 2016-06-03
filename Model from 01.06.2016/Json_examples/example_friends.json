@@ -1,8 +1,14 @@
 {
   "doctype": "friends",
   "profile_id": "<uuid>",
-  "friends": {
-    "id": "<uuid>",
-    "status": 1
-  }
+  "friends": [
+	{
+		"id": "<uuid>",
+		"status": 1
+	},
+	{
+		"id": "<uuid>",
+		"status": 1
+	}
+  ] 
 }
