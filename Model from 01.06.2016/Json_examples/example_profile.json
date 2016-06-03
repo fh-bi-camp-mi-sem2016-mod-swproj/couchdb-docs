@@ -4,7 +4,7 @@
   "firstname": "karl",
   "lastname": "schmidt",
   "email": "schmitti@test.de",
-  "birthday": "-383788800",
+  "birthday": -383788800,
   "gender": 1,
   "familystatus": 1,
   "children": 2,
