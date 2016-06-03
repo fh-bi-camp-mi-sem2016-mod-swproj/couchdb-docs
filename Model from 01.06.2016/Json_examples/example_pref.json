@@ -1,9 +1,10 @@
 {
   "doctype": "pref",
-  "gender": "0",
-  "ageFROM": "40",
-  "ageTO": "60",
-  "haircolor": "1",
-  "eyecolor": "0",
-  "figure": "1"
+  "profile_id": "<uuid>",
+  "gender": 0,
+  "ageFROM": 40,
+  "ageTO": 60,
+  "haircolor": 1,
+  "eyecolor": 0,
+  "figure": 1
 }

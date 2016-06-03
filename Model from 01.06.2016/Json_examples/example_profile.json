@@ -1,20 +1,20 @@
 {
   "doctype": "profile",
-  "user_id": "",
+  "user_id": "<uuid>",
   "firstname": "karl",
   "lastname": "schmidt",
   "email": "schmitti@test.de",
   "birthday": "-383788800",
-  "gender": "1",
-  "familystatus": "1",
-  "children": "2",
+  "gender": 1,
+  "familystatus": 1,
+  "children": 2,
   "aboutme": "bruder leichtfuß",
   "privacy": {
-    "friends": "1",
-    "pictures": "0"
+    "friends": 1,
+    "pictures": 0
   },
-  "profilepic": "",
-  "haircolor": "2",
-  "eyecolor": "1",
-  "figure": "2"
+  "profilepic": "<uuid>",
+  "haircolor": 2,
+  "eyecolor": 1,
+  "figure": 2
 }

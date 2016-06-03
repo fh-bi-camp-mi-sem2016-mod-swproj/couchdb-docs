@@ -1,10 +1,10 @@
 {
   "doctype": "msg",
   "timestamp": "1458518400",
-  "from": "",
-  "to": "",
+  "from": "<uuid>",
+  "to": "<uuid>",
   "title": "Wie gehts?",
   "content": "Wie gehts dir? Würde mich über ein nettes Gespräch freuen.",
-  "deletedFrom": "false",
-  "deletedTo": "false"
+  "deletedFrom": false,
+  "deletedTo": false
 }
