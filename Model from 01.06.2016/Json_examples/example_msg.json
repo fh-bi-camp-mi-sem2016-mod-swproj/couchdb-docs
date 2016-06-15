@@ -5,6 +5,8 @@
   "to": "<uuid>",
   "title": "Wie gehts?",
   "content": "Wie gehts dir? Würde mich über ein nettes Gespräch freuen.",
+  "archivedFrom": false,
+  "archivedTo": false,
   "deletedFrom": false,
   "deletedTo": false
 }
