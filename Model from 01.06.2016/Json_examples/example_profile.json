@@ -14,6 +14,7 @@
     "pictures": 0
   },
   "profilepic": "<uuid>",
+  "reported": false,
   "haircolor": 2,
   "eyecolor": 1,
   "figure": 2
